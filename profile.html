@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Member Profile</title>
+  <link rel="stylesheet" href="./output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+    }
+    /* Hero Banner styling */
+    .hero-banner {
+      background: url('./assets/nlp.jpg') center/cover no-repeat;
+      position: relative;
+      min-height: 20rem; /* for a more prominent hero */
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+    /* Overlap effect for the profile image */
+    .profile-image-container {
+      position: relative;
+      margin-top: -6rem; /* Overlap the hero section */
+    }
+    /* Neon Ring Animation */
+    @keyframes ring-rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    /* 
+      We create a pseudo-element (::after) around the image 
+      that becomes a rotating conic gradient ring on hover.
+    */
+    .neon-ring {
+      position: relative;
+      z-index: 1; /* Ensure image is on top of the ring background */
+    }
+    .neon-ring::after {
+      content: "";
+      position: absolute;
+      top: -6px;
+      left: -6px;
+      width: calc(100% + 12px);
+      height: calc(100% + 12px);
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        #6b0f9c, /* purple */
+        #0066ff, /* blue */
+        #6b0f9c, /* purple */
+        #0066ff /* blue */
+      );
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      pointer-events: none;
+    }
+    .neon-ring:hover::after {
+      opacity: 1;
+      animation: ring-rotate 2.5s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 antialiased">
+  <!-- Responsive Navbar -->
+  <header class="fixed top-0 left-0 right-0 bg-white shadow z-50">
+    <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-gray-800">
+        <img src="./assets/vinnlp.png" alt="" class="h-10">
+      </a>
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html#home" class="text-gray-600 hover:text-blue-600">Home</a>
+        <a href="index.html#about" class="text-gray-600 hover:text-blue-600">About</a>
+        <a href="index.html#people" class="text-gray-600 hover:text-blue-600">People</a>
+        <a href="index.html#research" class="text-gray-600 hover:text-blue-600">Research</a>
+        <a href="index.html#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+      </nav>
+      <!-- Mobile menu button -->
+      <button id="menuBtn" class="md:hidden text-gray-600 focus:outline-none">
+        <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white shadow">
+      <ul class="px-6 py-4 space-y-2">
+        <li><a href="index.html#home" class="block text-gray-600 hover:text-blue-600">Home</a></li>
+        <li><a href="index.html#about" class="block text-gray-600 hover:text-blue-600">About</a></li>
+        <li><a href="index.html#people" class="block text-gray-600 hover:text-blue-600">People</a></li>
+        <li><a href="index.html#research" class="block text-gray-600 hover:text-blue-600">Research</a></li>
+        <li><a href="index.html#contact" class="block text-gray-600 hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Spacer for Fixed Navbar -->
+  <div class="pt-16"></div>
+
+  <!-- Hero Section with Overlapping Profile Image -->
+  <section class="hero-banner relative flex items-center justify-center">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="container mx-auto px-6 relative z-10 flex flex-col items-center justify-center text-center py-10">
+      <h1 id="memberName" class="text-4xl md:text-5xl font-bold text-white"></h1>
+      <p id="memberSubtitle" class="text-xl text-gray-200 mt-2"></p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-6 py-12">
+    <!-- Profile Image (Overlapping) with Neon Ring -->
+    <div class="profile-image-container flex justify-center cursor-pointer">
+      <div class="neon-ring">
+        <img
+          id="memberImage"
+          src=""
+          alt="Profile Picture"
+          class="rounded-full border-4 border-white shadow-2xl w-48 h-48 md:w-64 md:h-64 object-cover"
+        >
+      </div>
+    </div>
+
+    <!-- Profile Details Card -->
+    <section class="max-w-7xl mx-auto mt-12 md:mt-16 bg-white rounded-lg shadow p-8">
+      <!-- Two-column layout on desktop; items-start ensures columns align at the top -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Left Column: Biography & About -->
+        <div>
+          <h2 id="aboutHeading" class="text-3xl font-bold text-gray-800 mb-4"></h2>
+          <p id="memberBio" class="text-gray-700 leading-relaxed"></p>
+        </div>
+
+        <!-- Right Column: Related Links, Projects & PhD Students -->
+        <div class="space-y-8">
+          <!-- Related Links -->
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Related Links</h3>
+            <ul id="relatedLinks" class="list-disc list-inside text-blue-600"></ul>
+          </div>
+          <!-- Projects -->
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Projects</h3>
+            <ul id="projectsList" class="list-disc list-inside text-gray-700"></ul>
+          </div>
+          <!-- PhD Students -->
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-2">PhD Students</h3>
+            <ul id="phdStudents" class="list-disc list-inside text-gray-700"></ul>
+          </div>
+        </div>
+      </div>
+      <!-- Back Button -->
+      <div class="mt-8 text-center">
+        <a
+          href="index.html#people"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded transition duration-300"
+        >
+          Back to People
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-4 mt-12">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-4 md:mb-0">
+        <a href="index.html#home" class="mr-4 hover:underline">Home</a>
+        <a href="index.html#about" class="mr-4 hover:underline">About</a>
+        <a href="index.html#contact" class="hover:underline">Contact</a>
+      </div>
+      <div>&copy; 2025 VinNLP. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu Toggle and Dynamic Content -->
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+    
+    // Member Data
+    const members = {
+      "dr-le-duy-dung": {
+        name: "Dr Le Duy Dung",
+        subtitle: "Director of VinNLP - VinUniversity NLP Group",
+        relatedLinks: [
+          { text: "Google Scholar", url: "https://scholar.google.com/citations?hl=en&user=0eoYR1gAAAAJ" },
+          { text: "Homepage", url: "https://andrew-dungle.github.io/" },
+          { text: "VinUni Page", url: "https://vinuni.edu.vn/people/le-duy-dung/" }
+        ],
+        projects: [
+          "Robust Vietnamese-English Clinical and Educational Medical Translation (PI: Prof. Wray Buntine)",
+          "Language Processing Adaptations for Multiple Recommendation Tasks (PI)",
+          "Multimodal Federated Learning for Multi-objectives Recommendation (PI)",
+          "SMART-CEM: Applying Artificial Intelligence (AI) and eye-tracking in designing and managing delightful customer experiences in the hospitality sector (Co-PI)"
+        ],
+        phdStudents: [
+          "Kieu Hai Dang (Cohort 24)",
+          "Vo Diep Nhu (Cohort 24)",
+          "Ta Quang Hieu (Cohort 25)",
+          "Nguyen Tien Dong (Cohort 25)"
+        ],
+        image: "./assets/dung.jpg",
+        aboutHeading: "About Dr Le Duy Dung",
+        bio: "Dr Le Duy Dung is a dedicated leader in NLP research at VinUniversity. His work encompasses clinical translation and advanced recommendation systems, driving innovation through multiple high-impact projects."
+      },
+      "dr-mo-el-haj": {
+        name: "Dr Mo El-Haj",
+        subtitle: "Dr Mo El-Haj (Reader - Associate Professor in NLP) • Director of VinNLP - VinUniversity NLP Group",
+        relatedLinks: [
+          { text: "Google Scholar", url: "https://scholar.google.com/citations?user=diBeuuEAAAAJ&hl=en" },
+          { text: "ORCID", url: "https://orcid.org/0000-0002-6136-3898" },
+          { text: "Homepage", url: "https://elhaj.uk/" },
+          { text: "VinUni Page", url: "https://vinuni.edu.vn/people/mo-el-haj/" }
+        ],
+        projects: [
+          "Welsh Language Model (a pilot)",
+          "DigiGrid for Welsh Language Resources",
+          "Using NLP to Monitor Water Pipes Burst",
+          "Catalyst Fund for Advancing Celtic NLP Research",
+          "FreeTxt: Supporting Bilingual Free-Text Survey and Questionnaire Data Analysis",
+          "Talent Track Application for NLP and Econometric Techniques",
+          "Canadian Annual Reports Extractor (CARE)",
+          "Using Word Embeddings to Create a Thesaurus of Contemporary Welsh",
+          "Welsh Summary Creator (WSC)",
+          "CLARA-Fin: Readability and Simplification in Financial Narrative",
+          "An Assessment of Corporate Disclosures from Accounting Standards 15",
+          "Arabic USAS Semantic Tagger (AraSAS)",
+          "FinT-esp: Financial Texts in Spanish"
+        ],
+        phdStudents: [
+          "Salim Al Mandhari: Arabic Automatic Readability Assessment",
+          "Gigi Alshahrani: Detecting Offensive Content in Different Arabic Dialects",
+          "Damith Dola Mullage: Legal NLP",
+          "Jesse Phillips: Source Code Documentation Using NLP",
+          "Dr Nadhem Zmandar: Multilingual Financial Summarization (Graduated)",
+          "Dr Chiamaka Chukwuneke: NER for African Languages: A Focus on Igbo (Graduated)"
+        ],
+        image: "./assets/moelhaj.jpg",
+        aboutHeading: "About Dr Mo El-Haj",
+        bio: "Dr Mo El-Haj is a leading researcher in NLP with extensive experience in developing cutting-edge language models and applied projects that span multiple domains."
+      },
+      "prof-wray-buntine": {
+        name: "Prof. Wray Buntine",
+        subtitle: "Professor in NLP & Director, Computer Science Program",
+        relatedLinks: [
+          { text: "Google Scholar", url: "https://scholar.google.com/citations?user=J2pGGuAAAAAJ&hl=en" },
+          { text: "ORCID", url: "https://orcid.org/0000-0001-9292-1015" },
+          { text: "VinUni Page", url: "https://vinuni.edu.vn/people/wray-buntine-phd/" }
+        ],
+        projects: [
+          "Robust Vietnamese-English Clinical and Educational Medical Translation",
+          "Towards Reliable Output Generation from LLMs",
+          "Verifiable Logical Reasoning with Language Models",
+          "Low-Resource Medical Named Entity Recognition",
+          "Improving Data Labelling Efficacy with Deep Neural Network via Active Learning",
+          "Data-Driven Closed-Loop Medication Management",
+          "Deep Anomaly Detection on Graph-structured Data",
+          "Statistical Machine Learning Methods for Modelling, Imaging, and Monitoring the Brain"
+        ],
+        phdStudents: [
+          "Kieu Hai Dang (Cohort 24)",
+          "Vo Diep Nhu (Cohort 24)",
+          "Several at Monash"
+        ],
+        image: "./assets/WrayStudioHead24.png",
+        aboutHeading: "About Prof. Wray Buntine",
+        bio: "Prof. Wray Buntine is a renowned figure in NLP and computer science, specializing in probabilistic models, deep learning, and innovative research in language technologies."
+      }
+    };
+
+    // Helper function to get URL parameter
+    function getQueryParam(param) {
+      const params = new URLSearchParams(window.location.search);
+      return params.get(param);
+    }
+
+    // Populate page based on member parameter
+    const memberId = getQueryParam("member");
+    if (memberId && members[memberId]) {
+      const member = members[memberId];
+      document.getElementById("memberName").textContent = member.name;
+      document.getElementById("memberSubtitle").textContent = member.subtitle;
+      document.getElementById("memberImage").src = member.image;
+      document.getElementById("memberImage").alt = member.name;
+      document.getElementById("aboutHeading").textContent = member.aboutHeading;
+      document.getElementById("memberBio").textContent = member.bio;
+      
+      // Populate related links
+      const linksContainer = document.getElementById("relatedLinks");
+      member.relatedLinks.forEach(link => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = link.url;
+        a.textContent = link.text;
+        a.target = "_blank";
+        li.appendChild(a);
+        linksContainer.appendChild(li);
+      });
+      
+      // Populate projects list
+      const projectsContainer = document.getElementById("projectsList");
+      member.projects.forEach(project => {
+        const li = document.createElement("li");
+        li.textContent = project;
+        projectsContainer.appendChild(li);
+      });
+      
+      // Populate PhD students list
+      const phdContainer = document.getElementById("phdStudents");
+      member.phdStudents.forEach(student => {
+        const li = document.createElement("li");
+        li.textContent = student;
+        phdContainer.appendChild(li);
+      });
+    } else {
+      // Fallback for invalid member id
+      document.getElementById("memberName").textContent = "Member Not Found";
+      document.getElementById("memberSubtitle").textContent = "";
+      document.getElementById("memberBio").textContent = "The requested member profile does not exist. Please check the URL.";
+    }
+  </script>
+</body>
+</html>
