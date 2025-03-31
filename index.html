@@ -1,66 +1,395 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VinNLP - VinUniversity's NLP Group</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VinNLP Landing Page</title>
+    <!-- Link to your compiled Tailwind CSS -->
+    <link rel="stylesheet" href="./output.css" />
+    <!-- Optionally include Font Awesome for social icons -->
+    <!-- <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Fallback if Tailwind is not configured with this font */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            text-align: center;
+            font-family: 'Bai Jamjuree', sans-serif;
         }
-        header {
-            background-color: #800000;
-            color: white;
-            padding: 20px;
+
+        /* Ensure the hero heading is inline-level and doesn’t break to a new line */
+        #hero-h1 {
+            display: inline-block;
+            /* Inline container for the text */
+            white-space: nowrap;
+            /* Prevent wrapping onto a new line */
         }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+        /* Style the Typed.js cursor */
+        .typed-cursor {
+            display: inline;
+            /* Keep cursor in the inline flow */
+            vertical-align: middle;
+            /* Align cursor vertically with text (use middle or baseline as needed) */
+            font-size: inherit;
+            font-weight: normal;
+            margin-left: 0.1em;
+            /* small gap between text and cursor */
+            animation: blink 0.7s infinite;
         }
-        .banner {
-            width: 100%;
-            border-radius: 10px;
+
+        /* Add a blinking cursor after the heading text using a pseudo-element */
+        #hero-h1::after {
+            content: "|";
+            display: inline;
+            vertical-align: middle;
+            font-size: inherit;
+            margin-left: 0.1em;
+            animation: blink 0.7s infinite;
         }
-        h1, h2 {
-            color: #800000;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            padding: 15px;
-            background: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-        }
-        .profile img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-        .profile div {
-            text-align: left;
-        }
-        a {
-            color: #800000;
-            text-decoration: none;
-            font-weight: bold;
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
-<body>
 
-<h1>Welcome to VinNLP</h1>
-<p>Website coming soon..</p>
+<body class="font-sans antialiased">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl md:text-3xl font-bold text-gray-800">
+                <img src="./assets/vinnlp.png" alt="" class="h-10">
+            </a>
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden px-3 py-2 border rounded text-gray-600 border-gray-400"
+                aria-label="Toggle Navigation">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-600">About</a></li>
+                <li><a href="#people" class="hover:text-blue-600">People</a></li>
+                <li><a href="#research" class="hover:text-blue-600">Research</a></li>
+                <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="#partners" class="hover:text-blue-600">Collaborations</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow">
+            <ul class="flex flex-col space-y-2 px-6 py-4 text-gray-700">
+                <li><a href="#home" class="block hover:text-blue-600">Home</a></li>
+                <li><a href="#about" class="block hover:text-blue-600">About</a></li>
+                <li><a href="#people" class="block hover:text-blue-600">People</a></li>
+                <li><a href="#research" class="block hover:text-blue-600">Research</a></li>
+                <li><a href="#projects" class="block hover:text-blue-600">Projects</a></li>
+                <li><a href="#partners" class="block hover:text-blue-600">Collaborations</a></li>
+                <li><a href="#contact" class="block hover:text-blue-600">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative hero bg-cover bg-center text-white pt-20"
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/nlp.jpg');">
+        <div class="container mx-auto px-6 flex flex-col items-center justify-center min-h-screen text-center">
+            <h1 id="hero-h1" class="inline-block text-4xl md:text-6xl font-bold mb-8"></h1>
+            <a href="#about"
+                class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded text-white font-medium shadow-lg transition duration-300">
+                Learn More
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">About Us</h2>
+            <div class="md:flex md:items-start md:space-x-8">
+                <!-- Left: Extended Text Content -->
+                <div class="md:w-2/3">
+                    <h3 class="text-xl font-semibold mb-2">Who We Are</h3>
+                    <p class="mb-4">
+                        VinNLP is the Natural Language Processing (NLP) research group at VinUniversity, dedicated to
+                        advancing AI-driven language
+                        technologies with a strong focus on low-resource languages, machine learning, and applied NLP
+                        research.
+                    </p>
+                    <p class="mb-4">
+                        We collaborate with academic institutions, industry partners, and government bodies to develop
+                        cutting-edge LLMs, text
+                        summarisation techniques, machine translation models, and more.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Our Mission</h3>
+                    <p class="mb-4">
+                        Our mission is to push the boundaries of NLP research by developing language technologies for
+                        underrepresented languages,
+                        improving multilingual AI, and contributing to the global AI research community.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Our Focus Areas</h3>
+                    <ul class="list-disc list-inside mb-4">
+                        <li>Low-resource language modelling</li>
+                        <li>Text summarisation &amp; information extraction</li>
+                        <li>Machine translation &amp; multilingual NLP</li>
+                        <li>AI applications in healthcare, finance, and social sciences</li>
+                        <li>Ethical AI and bias mitigation in NLP</li>
+                    </ul>
+                    <p>
+                        We are part of VinUniversity’s College of Engineering and Computer Science (CECS) and
+                        collaborate with leading international
+                        research groups to create impactful AI-driven solutions.
+                    </p>
+                </div>
+                <!-- Right: Images -->
+                <div class="md:w-1/3 mt-8 md:mt-0 grid grid-cols-1 gap-4">
+                    <img src="/assets/img/about-placeholder.jpg" alt="VinNLP Team" class="rounded-lg shadow-xl w-full">
+                    <img src="/assets/img/about-secondary.jpg" alt="Research Collaboration"
+                        class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- People Section -->
+    <section id="people" class="py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8">Our Leadership</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dr. Mo El-Haj -->
+                <a href="profile.html?member=dr-mo-el-haj" class="block">
+
+
+                    <div
+                        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transform transition text-center">
+                        <div class="w-32 h-32 overflow-hidden mx-auto rounded-full mb-4 border">
+                            <img src="./assets/moelhaj.jpg" alt="Dr. Mo El-Haj" class="h-full w-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-semibold">Dr. Mo El-Haj</h3>
+                        <p class="text-gray-600">
+                            Director, VinNLP<br />
+                            <small>Associate Professor (Reader) in NLP</small>
+                        </p>
+                        <p class="text-sm mt-2">
+                            Research focus: LLMs for low-resource languages, text summarisation &amp; information
+                            extraction.
+                        </p>
+                    </div>
+                </a>
+                <!-- Prof. Wray Buntine -->
+                <a href="profile.html?member=prof-wray-buntine" class="block">
+
+
+                    <div
+                        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transform transition text-center">
+                        <div class="w-32 h-32 overflow-hidden mx-auto rounded-full mb-4 border">
+                            <img src="./assets/WrayStudioHead24.png" alt="Prof. Wray Buntine"
+                                class="h-full w-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-semibold">Prof. Wray Buntine</h3>
+                        <p class="text-gray-600">
+                            Professor in NLP<br />
+                            <small>Director, Computer Science Program</small>
+                        </p>
+                        <p class="text-sm mt-2">
+                            Research focus: Probabilistic graphical models, deep learning, and NLP.
+                        </p>
+                    </div>
+                </a>
+                <!-- Dr. Le Duy Dung -->
+                <a href="profile.html?member=dr-le-duy-dung" class="block">
+                    <div
+                        class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 transform transition text-center">
+                        <div class="w-32 h-32 overflow-hidden mx-auto rounded-full mb-4 border">
+                            <img src="./assets/dung.jpg" alt="Dr. Le Duy Dung" class="h-full w-full object-cover" />
+                        </div>
+                        <h3 class="text-xl font-semibold">Dr. Le Duy Dung</h3>
+                        <p class="text-gray-600">
+                            Assistant Professor, Computer Science<br />
+                            <small>Program Director, Master of Product Management in AI</small>
+                        </p>
+                        <p class="text-sm mt-2">
+                            Research focus: Data science, AI applications, and data-driven NLP research.
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <!-- PhD Students Section -->
+            <div class="mt-12 text-center">
+                <h3 class="text-2xl font-semibold mb-4">PhD Students</h3>
+                <p class="mb-2">Our group supports PhD students working on NLP-related research.</p>
+                <p class="text-sm">
+                    [Kieu Hai Dang] – Research focus: [Research Topic]<br>
+                    [Vo Diep Nhu] – Research focus: [Research Topic]<br>
+                    [Ta Quang Hieu] – Research focus: [Research Topic]<br>
+                    [Nguyen Tien Dong] – Research focus: [Research Topic]<br>
+                </p>
+                <p class="mt-2 text-blue-600 transition hover:underline cursor-pointer">
+                    Apply to join our research group
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research & Projects Section -->
+    <section id="research" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6">Research &amp; Projects</h2>
+            <!-- Pill-Style Tabs for switching -->
+            <div class="flex justify-center mb-6">
+                <button id="tabTopics"
+                    class="px-6 py-2 rounded-full font-medium bg-blue-600 text-white focus:outline-none transition-all duration-300">
+                    Research Topics
+                </button>
+                <button id="tabProjects"
+                    class="px-6 py-2 rounded-full font-medium bg-gray-200 text-gray-700 focus:outline-none transition-all duration-300 ml-4">
+                    Research Projects
+                </button>
+            </div>
+            <!-- Research Topics Content -->
+            <div id="contentTopics">
+                <ul class="list-disc list-inside space-y-2">
+                    <li><strong>Low-resource language processing:</strong> Developing AI models for underrepresented
+                        languages.</li>
+                    <li><strong>Text summarisation:</strong> Creating models for extractive and abstractive
+                        summarisation.</li>
+                    <li><strong>Machine translation:</strong> Improving multilingual and domain-specific translations.
+                    </li>
+                    <li><strong>Sentiment analysis &amp; opinion mining:</strong> Extracting emotions and opinions from
+                        texts.</li>
+                    <li><strong>Question answering &amp; information retrieval:</strong> Advancing AI-driven search and
+                        knowledge retrieval.</li>
+                    <li><strong>Conversational AI &amp; chatbots:</strong> Developing domain-specific virtual
+                        assistants.</li>
+                </ul>
+            </div>
+            <!-- Research Projects Content -->
+            <div id="contentProjects" class="hidden mt-6">
+                <h3 class="text-2xl font-semibold mb-4">Ongoing Projects</h3>
+                <ul class="list-disc list-inside space-y-2 mb-6">
+                    <li>Project 1 Description.....</li>
+                    <li>Project 2 Description.....</li>
+                    <li>Project 3 Description.....</li>
+                </ul>
+                <h3 class="text-2xl font-semibold mb-4">Past Projects</h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Project 1 Description.....</li>
+                    <li>Project 2 Description.....</li>
+                    <li>Project 3 Description.....</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-12 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-8">Collaborations &amp; Partners</h2>
+            <p class="mb-6">We work with academic, governmental, and industry partners worldwide.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
+                <div>
+                    <img src="./assets/vinai.png" alt="VinAI" class="mx-auto h-12" />
+                    <p class="text-sm mt-2">VinAI</p>
+                </div>
+                <div>
+                    <img src="./assets/Thiết kế chưa có tên.jpg" alt="Partner" class="mx-auto h-24" />
+                    <p class="text-sm mt-2">VinTelligence</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6 md:flex md:space-x-12">
+            <!-- Contact Info -->
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+                <p class="mb-2"><strong>Address:</strong> CECS, VinUniversity, Hanoi, Vietnam</p>
+                <p class="mb-2">
+                    <strong>Email:</strong>
+                    <a href="mailto:contact@vinuni.edu.vn"
+                        class="text-blue-600 hover:underline">contact@vinuni.edu.vn</a>
+                </p>
+                <p class="mb-6"><strong>Website:</strong> <a href="https://vinnlp.com"
+                        class="text-blue-600 hover:underline">vinnlp.com</a></p>
+                <div class="flex space-x-4">
+                    <a href="#" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- Contact Form -->
+            <div class="md:w-1/2">
+                <form action="#" method="POST">
+                    <div class="mb-4">
+                        <input type="text" name="name" placeholder="Your Name"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" name="email" placeholder="Your Email"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <textarea name="message" rows="4" placeholder="Your Message"
+                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="bg-blue-600 cursor-pointer text-white font-semibold px-6 py-3 rounded hover:bg-blue-700 transition duration-300">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 text-sm py-4">
+        <div class="container mx-auto px-6 md:flex md:items-center md:justify-between">
+            <!-- Secondary Nav Links -->
+            <div class="mb-4 md:mb-0">
+                <a href="#home" class="mr-4 hover:underline">Home</a>
+                <a href="#about" class="mr-4 hover:underline">About</a>
+                <a href="#people" class="mr-4 hover:underline">People</a>
+                <a href="#research" class="mr-4 hover:underline">Research</a>
+                <a href="#contact" class="hover:underline">Contact</a>
+            </div>
+            <!-- Social Icons -->
+            <div class="mb-4 md:mb-0">
+                <a href="#" aria-label="LinkedIn" class="mr-3 hover:text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="Twitter" class="mr-3 hover:text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+            <!-- Copyright -->
+            <div>
+                &copy; 2025 VinNLP. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- JavaScript -->
+    <script src="./main.js"></script>
 
 </body>
+
 </html>
