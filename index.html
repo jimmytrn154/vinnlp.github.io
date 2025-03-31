@@ -10,7 +10,9 @@
     <!-- Optionally include Font Awesome for social icons -->
     <!-- <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MdFKNzCgP2CgcnI2Hg+grrGZ2E1uJtEmG9OAzgBClT49yNdozD1X0xAP0drfQ6d3VWaTb0Dj+0LyEKaRuUEC3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
         /* Fallback if Tailwind is not configured with this font */
         body {
             font-family: 'Bai Jamjuree', sans-serif;
@@ -84,7 +86,7 @@
                 <li><a href="#about" class="hover:text-blue-600">About</a></li>
                 <li><a href="#people" class="hover:text-blue-600">People</a></li>
                 <li><a href="#research" class="hover:text-blue-600">Research</a></li>
-                <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="#research" class="hover:text-blue-600">Projects</a></li>
                 <li><a href="#partners" class="hover:text-blue-600">Collaborations</a></li>
                 <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
             </ul>
@@ -96,7 +98,7 @@
                 <li><a href="#about" class="block hover:text-blue-600">About</a></li>
                 <li><a href="#people" class="block hover:text-blue-600">People</a></li>
                 <li><a href="#research" class="block hover:text-blue-600">Research</a></li>
-                <li><a href="#projects" class="block hover:text-blue-600">Projects</a></li>
+                <li><a href="#research" class="block hover:text-blue-600">Projects</a></li>
                 <li><a href="#partners" class="block hover:text-blue-600">Collaborations</a></li>
                 <li><a href="#contact" class="block hover:text-blue-600">Contact</a></li>
             </ul>
@@ -391,28 +393,45 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-gray-100">
-        <div class="container mx-auto px-6 md:flex md:space-x-12">
-            <!-- Contact Info -->
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-                <p class="mb-2"><strong>Address:</strong> CECS, VinUniversity, Hanoi, Vietnam</p>
-                <p class="mb-2">
-                    <strong>Email:</strong>
-                    <a href="mailto:elhaj.m@vinuni.edu.vn"
-                        class="text-blue-600 hover:underline">elhaj.m@vinuni.edu.vn</a>
-                </p>
-                <p class="mb-6"><strong>Website:</strong> <a href="https://vinnlp.com"
-                        class="text-blue-600 hover:underline">vinnlp.com</a></p>
-                <div class="flex space-x-4">
-                    <a href="#" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
+   <section id="contact" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-6 md:flex md:space-x-12">
+    <!-- Contact Info -->
+    <div class="md:w-1/2 mb-8 md:mb-0">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="mb-2"><strong>Address:</strong> CECS, VinUniversity, Hanoi, Vietnam</p>
+      <p class="mb-2">
+        <strong>Email:</strong>
+        <a href="mailto:elhaj.m@vinuni.edu.vn" class="text-blue-600 hover:underline">elhaj.m@vinuni.edu.vn</a>
+      </p>
+      <p class="mb-6">
+        <strong>Website:</strong>
+        <a href="https://vinnlp.com" class="text-blue-600 hover:underline">vinnlp.com</a>
+      </p>
+<div class="flex space-x-4 mb-6">
+  <a href="https://www.linkedin.com/company/vinnlp" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-700 text-2xl">
+    <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://x.com/vinnlp" target="_blank" aria-label="X" class="text-gray-500 hover:text-gray-700 text-2xl">
+    <i class="fab fa-x-twitter"></i>
+  </a>
+</div>
+      <div>
+        <a 
+          href="https://cecs.vinuni.edu.vn/phd-in-computer-science/" 
+          target="_blank" 
+          class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+        >
+          Apply for a PhD in Computer Science/NLP
+        </a>
+        <a 
+          href="https://vinuni.edu.vn/jobs/" 
+          target="_blank" 
+          class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+        >
+          Work with us – Explore professional opportunities
+        </a>
+      </div>
+    </div>
             <!-- Contact Form -->
             <div class="md:w-1/2">
     <form action="https://usebasin.com/f/24f2d90b8cdf" method="POST" accept-charset="UTF-8">
@@ -457,6 +476,7 @@
                 <a href="#about" class="mr-4 hover:underline">About</a>
                 <a href="#people" class="mr-4 hover:underline">People</a>
                 <a href="#research" class="mr-4 hover:underline">Research</a>
+				<a href="#research" class="mr-4 hover:underline">Projects</a>
                 <a href="#contact" class="hover:underline">Contact</a>
             </div>
             <!-- Social Icons -->
