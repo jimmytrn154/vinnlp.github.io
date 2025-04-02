@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VinNLP Projects</title>
+  <link rel="stylesheet" href="./output.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+    }
+    .hero-banner {
+      background: url('./assets/bg1.jpeg') center/cover no-repeat;
+      position: relative;
+      min-height: 20rem;
+    }
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="text-2xl md:text-3xl font-bold text-gray-800">
+                <img src="./assets/vinnlp.png" alt="" class="h-10">
+            </a>
+            <!-- Mobile menu button -->
+            <button id="menuBtn" class="md:hidden px-3 py-2 border rounded text-gray-600 border-gray-400"
+                aria-label="Toggle Navigation">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                    <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" />
+                </svg>
+            </button>
+            <!-- Desktop Navigation -->
+            <ul class="hidden md:flex space-x-6 text-gray-700">
+                <li><a href="#home" class="hover:text-blue-600">Home</a></li>
+                <li><a href="#about" class="hover:text-blue-600">About</a></li>
+                <li><a href="#people" class="hover:text-blue-600">People</a></li>
+                <li><a href="#research" class="hover:text-blue-600">Research</a></li>
+                <li><a href="#research" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="#partners" class="hover:text-blue-600">Collaborations</a></li>
+				<li><a href="jobs.html" class="hover:text-blue-600">Jobs</a></li>
+                <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow">
+            <ul class="flex flex-col space-y-2 px-6 py-4 text-gray-700">
+                <li><a href="#home" class="block hover:text-blue-600">Home</a></li>
+                <li><a href="#about" class="block hover:text-blue-600">About</a></li>
+                <li><a href="#people" class="block hover:text-blue-600">People</a></li>
+                <li><a href="#research" class="block hover:text-blue-600">Research</a></li>
+                <li><a href="#research" class="block hover:text-blue-600">Projects</a></li>
+                <li><a href="#partners" class="block hover:text-blue-600">Collaborations</a></li>
+				<li><a href="jobs.html" class="hover:text-blue-600">Jobs</a></li>
+                <li><a href="#contact" class="block hover:text-blue-600">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+  <div class="pt-16"></div>
+
+  <section class="hero-banner relative flex items-center justify-center">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="container mx-auto px-6 relative z-10 text-center text-white py-10">
+      <h1 class="text-4xl md:text-5xl font-bold">Research Projects</h1>
+      <p class="text-xl mt-2">Research Opportunities at VinNLP</p>
+    </div>
+  </section>
+
+  <main class="container mx-auto px-6 py-12 space-y-12">
+
+    <section class="bg-white rounded-lg shadow p-8 space-y-4">
+      <h2 class="text-2xl font-bold">1. NLP Research Assistant – Bilingual Speech-to-Text Development</h2>
+      <p><strong>Overview:</strong> We’re seeking a motivated NLP Research Assistant to support the development of a bilingual speech-to-text application for the medical field. This role focuses on advancing speech recognition models capable of processing English and Vietnamese medical terminology with high accuracy.</p>
+      <p><strong>Key Responsibilities:</strong></p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Contribute to the development of a bilingual (English-Vietnamese) speech-to-text system tailored for healthcare.</li>
+        <li>Research and evaluate open-source speech-to-text frameworks, identifying those suitable for integration.</li>
+        <li>Fine-tune speech recognition models to interpret specialized medical terminology accurately.</li>
+        <li>Incorporate a bilingual medical dictionary for precise transcription.</li>
+        <li>Conduct system testing, identify and resolve bugs, and optimize platform performance.</li>
+        <li>Maintain detailed documentation of methodologies, experiments, and outcomes.</li>
+
+      </ul>
+      <p><strong>Qualifications:</strong></p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Graduate student in Computer Science or a related discipline.</li>
+        <li>Background in Natural Language Processing (NLP) or related subjects.</li>
+        <li>Proficiency in Python.</li>
+        <li>Familiarity with machine learning frameworks (e.g., TensorFlow, PyTorch).</li>
+        <li>Knowledge of speech recognition technologies.</li>
+
+      </ul>
+      <p><strong>Preferred Skills:</strong></p> 
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Prior experience with speech-to-text projects or systems.</li>
+        <li>Proficiency in the Vietnamese language is a strong asset.</li>
+        <li>Familiarity with medical terminology or experience within healthcare settings.</li>
+
+	  <p><strong>Project duration:</strong> 12 months starting May or June 2025.</p>
+
+      <a href="https://forms.gle/Pu9R4CAFkdFDEMC79" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply</a>
+    </section>
+
+    <section class="bg-white rounded-lg shadow p-8 space-y-4">
+      <h2 class="text-2xl font-bold">2. NLP Research Assistant – English-Vietnamese Neural Machine Translation</h2>
+      <p><strong>Overview:</strong> We are seeking a skilled NLP Research Assistant to assist in the development of a neural machine translation (NMT) system focused on English-Vietnamese medical content. This role involves implementing advanced NMT techniques to enhance the quality and reliability of medical translations.</p>
+      <p><strong>Key Responsibilities:</strong></p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Conduct literature reviews on state-of-the-art NMT approaches, applying relevant insights to improve translation accuracy.</li>
+        <li>Work on refining Vietnamese-English translations for healthcare content, enhancing clarity and accuracy.</li>
+        <li>Integrate a bilingual medical dictionary to improve translation reliability.</li>
+        <li>Develop methods for identifying uncertainties in translations, including alternative translations or error flags.</li>
+        <li>Test and evaluate translation models using real-world medical texts, analyzing results to identify areas for enhancement.</li>
+		<li>Collaborate with linguists and medical professionals to ensure the system meets end-user needs.</li>
+		<li>Keep comprehensive documentation of methodologies, experiments, and findings.</li>
+      </ul>
+      <p><strong>Qualifications:</strong> Graduate student in CS, strong NLP and Python skills, familiarity with NMT.</p>
+	   <ul class="list-disc list-inside text-gray-700">
+        <li>Graduate student in Computer Science or a related field.</li>
+        <li>Strong foundation in Natural Language Processing (NLP) or similar disciplines.</li>
+        <li>Proficiency in Python.</li>
+        <li>Experience with machine learning libraries (e.g., TensorFlow, PyTorch), particularly for training and tuning models.</li>
+        <li>Familiarity with neural machine translation techniques.</li>
+      </ul>
+
+      <p><strong>Preferred Skills:</strong> Vietnamese proficiency, medical background, attention to detail.</p>
+	  <ul class="list-disc list-inside text-gray-700">
+        <li>Vietnamese language proficiency is highly desirable.</li>
+        <li>Background in medical terminology or healthcare-related projects.</li>
+        <li>Experience with NMT projects or translation software.</li>
+        <li>Strong attention to detail and commitment to accuracy in translation outputs.</li>
+      </ul>
+	  <p><strong>Project duration:</strong> 12 months starting May or June 2025.</p>
+
+      <a href="https://forms.gle/Pu9R4CAFkdFDEMC79" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply</a>
+    </section>
+
+    <section class="bg-white rounded-lg shadow p-8 space-y-4">
+      <h2 class="text-2xl font-bold">3. NLP Research Assistant – Vietnamese Semantic Tagging System (ViSaS)</h2>
+      <p><strong>Overview:</strong> We are seeking a dedicated and curious NLP Research Assistant to support the development of ViSaS, an open-source Vietnamese Semantic Tagging System inspired by the AraSAS/USAS framework. This role will contribute to building a semantic lexicon and tagging system tailored for Vietnamese, facilitating semantic enrichment of text and enabling cross-linguistic research and applications.</p>
+      <p><strong>Key Responsibilities:</strong></p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Assist in building a Vietnamese semantic lexicon, mapping word senses to semantic domains adapted from the USAS framework.</li>
+        <li>Work on the alignment of Vietnamese lexemes to coarse-grained semantic fields using English glosses and bilingual corpora.</li>
+        <li>Explore and adapt existing Vietnamese morphological analysers and lemmatisers to support ViSaS tagging.</li>
+        <li>Develop and test a Vietnamese semantic tagging pipeline using Python and open-source NLP tools.</li>
+        <li>Evaluate system coverage and accuracy across corpora in Vietnamese, and support manual correction where needed.</li>
+        <li>Evaluate Vietnamese tagging performance of existing chatbots (e.g. ChatGPT, Gemini), focusing on semantic consistency and error patterns.</li>
+        <li>Contribute to the development of a hybrid Vietnamese semantic tagging pipeline that integrates outputs from commercial LLMs with rule-based or lightweight ML components.</li>
+        <li>Help maintain clean documentation and support the open-source release of ViSaS tools and lexicons.</li>
+      </ul>
+      <p><strong>Qualifications:</strong> Graduate student in CS or Computational Linguistics, experience in lexical semantics, Python.</p>
+	  	  <ul class="list-disc list-inside text-gray-700">
+        <li>Graduate student in Computer Science, Computational Linguistics, or a related discipline.</li>
+        <li>Background in Natural Language Processing, particularly lexical semantics or annotation.</li>
+        <li>Experience in Python programming.</li>
+        <li>Familiarity with corpus linguistics and/or Vietnamese linguistic structures.</li>
+        <li>Basic knowledge of linguistic resources like POS taggers, lemmatisers, or morphological analysers.</li>
+      </ul>
+      <p><strong>Preferred Skills:</strong> Vietnamese linguistic knowledge, work with lexicons, interest in multilingual NLP.</p>
+	  	  <ul class="list-disc list-inside text-gray-700">
+        <li>Knowledge of Vietnamese language (reading and linguistic understanding).</li>
+        <li>Experience working with language resources, lexicons, or tagging systems.</li>
+        <li>Familiarity with frameworks such as NLTK, spaCy, or similar, as well as LLMs.</li>
+        <li>Interest in low-resource language technologies and multilingual NLP.</li>
+      </ul>
+	  	        <p><strong>USAS Tagger:</strong> Currently, USAS is available in more than 10 languages, including English, Welsh, Arabic, Chinese, Dutch, Italian, Portuguese, Spanish, Finnish and Malay. We are looking forward to the Veitnamese version. You can try the English demo here: <a href="https://ucrel-api.lancaster.ac.uk/usas/tagger.html" class="text-blue-600 hover:underline">https://ucrel-api.lancaster.ac.uk</a></p>
+     	  <p><strong>Collaboration:</strong> Working on this project, you'll collaborate with Researchers from <a href="https://lancaster.ac.uk" class="text-blue-600 hover:underline">Lancaser University</a> in England, UK.</p>
+		  <p><strong>Project duration:</strong> 12 months starting May or June 2025.</p>
+ <a href="https://forms.gle/Pu9R4CAFkdFDEMC79" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply</a>
+    </section>
+
+    <section class="bg-white rounded-lg shadow p-8 space-y-4">
+      <h2 class="text-2xl font-bold">4. NLP Research Assistant – English-Vietnamese Free-Text Survey Analysis (FreeTxt-Vi)</h2>
+      <p><strong>Overview:</strong> We are looking for a highly motivated NLP Research Assistant to support the development of FreeTxt-Vi – an English–Vietnamese version of the FreeTxt toolkit designed for the automated analysis and visualisation of bilingual free-text responses from surveys and questionnaires. Building on the success of FreeTxt (English–Welsh), this role will focus on extending the functionality to handle Vietnamese, enabling wider adoption of the tool in multilingual and cross-cultural settings.</p>
+      <p><strong>Key Responsibilities:</strong></p>
+      <ul class="list-disc list-inside text-gray-700">
+        <li>Support the extension of the FreeTxt architecture to process Vietnamese free-text alongside English.</li>
+        <li>Analyse how existing LLMs (e.g. ChatGPT, Gemini) handle English–Vietnamese free-text responses, with a focus on sentiment, summarisation, and meaning extraction.</li>
+        <li>Develop, adapt, or integrate Vietnamese NLP resources (tokenisers, POS taggers, sentiment analysis tools, summarisation models, etc.).</li>
+        <li>Curate and annotate bilingual survey datasets (English–Vietnamese) for tool training and evaluation.</li>
+        <li>Work with the team to integrate semantic and sentiment analysis modules compatible with Vietnamese.</li>
+        <li>Contribute to the evaluation and testing of the system using real-world Vietnamese survey data.</li>
+        <li>Assist in the production of user-facing documentation, including written guides and video tutorials.</li>
+      </ul>
+      <p><strong>Qualifications:</strong> Graduate student in CS or related field, experience with NLP, Python, and Vietnamese.</p>
+	  	  <ul class="list-disc list-inside text-gray-700">
+        <li>Graduate student in Computer Science, Computational Linguistics, or a related field.</li>
+        <li>GraduateExperience with Natural Language Processing (NLP), preferably with multilingual or low-resource languages.</li>
+        <li>GraduateStrong programming skills in Python.</li>
+        <li>GraduateFamiliarity with frameworks such as spaCy, Hugging Face Transformers, NLTK, or related.</li>
+        <li>GraduateKnowledge of the Vietnamese language (reading proficiency essential; writing/speaking desirable).</li>
+      </ul>
+      <p><strong>Preferred Skills:</strong> Experience with Vietnamese NLP tools (e.g. PhoBERT), visualisation, survey data, and social science methods.</p>
+	  	  <ul class="list-disc list-inside text-gray-700">
+        <li>Experience working with Vietnamese NLP tools (e.g. VnCoreNLP, PhoBERT, or similar).</li>
+        <li>Familiarity with survey data, qualitative text analysis, or social science research methods.</li>
+        <li>Experience with data visualisation and front-end libraries is a plus (e.g. D3.js, Plotly).</li>
+        <li>Interest in working on open-source, impactful projects serving diverse user groups.</li>
+      </ul>
+	        <p><strong>FreeTxt App:</strong> Currently, FreeTxt works on English and Welsh languages. The app is currently live and we are looking to have something similar for Vietnamese: <a href="https://freetxt.app/" class="text-blue-600 hover:underline">https://freetxt.app/</a></p>
+			 <p><strong>Collaboration:</strong> Working on this project, you'll collaborate with Researchers from <a href="https://lancaster.ac.uk" class="text-blue-600 hover:underline">Lancaser University</a> in England, UK. As well as <a href="https://cardiff.ac.uk" class="text-blue-600 hover:underline">The University of Cardiff</a> in Wales, UK. </p>
+    <p><strong>Project duration:</strong> 12 months starting May or June 2025.</p>
+
+      <a href="https://forms.gle/Pu9R4CAFkdFDEMC79" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply</a>
+</section>
+
+  </main>
+
+  <footer class="bg-gray-800 text-gray-300 py-4 mt-12">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-4 md:mb-0">
+                <a href="#home" class="mr-4 hover:underline">Home</a>
+                <a href="#about" class="mr-4 hover:underline">About</a>
+                <a href="#people" class="mr-4 hover:underline">People</a>
+                <a href="#research" class="mr-4 hover:underline">Research</a>
+				<a href="#research" class="mr-4 hover:underline">Projects</a>
+				<a href="jobs.html" class="mr-4 hover:underline">Jobs</a>
+                <a href="#contact" class="mr-4 hover:underline">Contact</a>
+      </div>
+      <div>&copy; 2025 VinNLP. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+  </script>
+</body>
+</html>
