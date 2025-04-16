@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NLP Bridges Talks</title>
+  <link rel="stylesheet" href="../output.css">
+  <style>
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+      background-color: #f4f4f4;
+      padding: 2rem;
+    }
+    .talk-card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .talk-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+    }
+    .talk-details {
+      flex: 1;
+    }
+    .talk-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .talk-meta {
+      font-size: 0.9rem;
+      color: #555;
+      margin-bottom: 0.75rem;
+    }
+    .talk-abstract {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    .talk-actions a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .talk-actions a.disabled {
+      background: #aaa;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="text-2xl font-bold mb-6">NLP Bridges Talk Series</h1>
+  <div id="upcoming-talks"></div>
+  <h2 class="text-xl font-semibold mt-10 mb-4">Past Talks</h2>
+  <div id="archived-talks"></div>
+
+  <script>
+    async function loadTalks() {
+      const response = await fetch('./talks/talks.csv');
+      const csvText = await response.text();
+      const lines = csvText.split('\n').slice(1);
+      const now = new Date();
+
+      lines.forEach(line => {
+        if (!line.trim()) return;
+        const [date, name, uni, country, pic, title, abstract, slides, register] = line.split(',');
+        const talkDate = new Date(date);
+        const isPast = talkDate < now;
+
+        const card = document.createElement('div');
+        card.className = 'talk-card';
+        card.innerHTML = `
+          <img src="${pic}" alt="${name}">
+          <div class="talk-details">
+            <div class="talk-title">${title}</div>
+            <div class="talk-meta">${name} – ${uni}, ${country} – ${talkDate.toDateString()}</div>
+            <div class="talk-abstract">${abstract}</div>
+            <div class="talk-actions">
+              ${slides ? `<a href="${slides}" target="_blank">View Slides</a>` : ''}
+              <a href="${register}" class="${isPast ? 'disabled' : ''}" target="_blank">Register</a>
+            </div>
+          </div>
+        `;
+
+        if (isPast) {
+          document.getElementById('archived-talks').appendChild(card);
+        } else {
+          document.getElementById('upcoming-talks').appendChild(card);
+        }
+      });
+    }
+
+    loadTalks();
+  </script>
+</body>
+</html>
