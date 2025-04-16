@@ -65,10 +65,15 @@
         }
 
 	/* Style only normal text links, not buttons or styled anchors */
-a:not(.btn):not(.text-white):not(.no-style) {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
+	a:not(.btn):not(.text-white):not(.no-style) {
+	color: #1d4ed8;
+	text-decoration: underline;
+	}
+
+	.no-style {
+	color: inherit !important;
+	text-decoration: none !important;
+	}
 
     .header-img {
       width: 100%;
@@ -101,12 +106,12 @@ a:not(.btn):not(.text-white):not(.no-style) {
       font-weight: 600;
       margin-bottom: 0.5rem;
     }
-    .talk-title {
+    .talk-abstract {
       font-size: 0.9rem;
       color: #555;
       margin-bottom: 0.75rem;
     }
-    .talk-abstract {
+    .talk-title {
       font-size: 0.95rem;
       color: #333;
       margin-bottom: 1rem;
@@ -276,8 +281,8 @@ a:not(.btn):not(.text-white):not(.no-style) {
             <div class="talk-title">${title}</div>
             <div class="talk-abstract">${abstract}</div>
             <div class="talk-actions">
-              ${slides ? `<a href="${slides}" target="_blank">View Slides</a>` : ''}
-              <a href="${register}" class="${isPast ? 'disabled' : ''}" target="_blank">Register</a>
+              ${slides ? `<a href="${slides}" class="no-style ${isPast ? 'disabled' : ''}" target="_blank">View Slides</a>` : ''}
+			  <a href="${register}" class="no-style ${isPast ? 'disabled' : ''}" target="_blank">Register</a>
             </div>
           </div>
         `;
