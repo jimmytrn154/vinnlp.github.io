@@ -59,6 +59,12 @@
       background: #aaa;
       pointer-events: none;
     }
+    .talk-date {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1f2937;
+    }
   </style>
 </head>
 <body>
@@ -76,17 +82,20 @@
 
       lines.forEach(line => {
         if (!line.trim()) return;
-        const [date, name, uni, country, pic, title, abstract, slides, register] = line.split(',');
+        const [date, name, uni, country, website, pic, title, abstract, slides, register] = line.split(',');
         const talkDate = new Date(date);
         const isPast = talkDate < now;
 
         const card = document.createElement('div');
         card.className = 'talk-card';
         card.innerHTML = `
+          <div class="talk-date">${talkDate.toDateString()}</div>
           <img src="${pic}" alt="${name}">
           <div class="talk-details">
             <div class="talk-title">${title}</div>
-            <div class="talk-meta">${name} – ${uni}, ${country} – ${talkDate.toDateString()}</div>
+            <div class="talk-meta">
+              <a href="${website}" target="_blank">${name}</a> – ${uni}, ${country}
+            </div>
             <div class="talk-abstract">${abstract}</div>
             <div class="talk-actions">
               ${slides ? `<a href="${slides}" target="_blank">View Slides</a>` : ''}
