@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize Typed.js for the hero h1 without backspacing
     var typed = new Typed("#hero-h1", {
-      strings: ["Welcome to NLP Bridges", "We Bring NLP Communities Together"],
+      strings: ["Welcome to NLP Bridges", "a VinNLP Initiative"],
       typeSpeed: 40,      // Adjust typing speed as needed
       backSpeed: 55,
       loop: true,        // Do not loop or backspace after typing
