@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>VinNLP Landing Page</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>VinNLP</title>
     <!-- Link to your compiled Tailwind CSS -->
     <link rel="stylesheet" href="./output.css" />
     <!-- Optionally include Font Awesome for social icons -->
     <!-- <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-MdFKNzCgP2CgcnI2Hg+grrGZ2E1uJtEmG9OAzgBClT49yNdozD1X0xAP0drfQ6d3VWaTb0Dj+0LyEKaRuUEC3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<style>
         /* Fallback if Tailwind is not configured with this font */
         body {
             font-family: 'Bai Jamjuree', sans-serif;
@@ -84,8 +87,10 @@
                 <li><a href="#about" class="hover:text-blue-600">About</a></li>
                 <li><a href="#people" class="hover:text-blue-600">People</a></li>
                 <li><a href="#research" class="hover:text-blue-600">Research</a></li>
-                <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+                <li><a href="#research" class="hover:text-blue-600">Projects</a></li>
                 <li><a href="#partners" class="hover:text-blue-600">Collaborations</a></li>
+				<li><a href="jobs.html" class="hover:text-blue-600">Jobs</a></li>
+				<li><a href="nlp_bridges.html" class="hover:text-blue-600">NLP Bridges</a></li>
                 <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
             </ul>
         </nav>
@@ -96,8 +101,10 @@
                 <li><a href="#about" class="block hover:text-blue-600">About</a></li>
                 <li><a href="#people" class="block hover:text-blue-600">People</a></li>
                 <li><a href="#research" class="block hover:text-blue-600">Research</a></li>
-                <li><a href="#projects" class="block hover:text-blue-600">Projects</a></li>
-                <li><a href="#partners" class="block hover:text-blue-600">Collaborations</a></li>
+                <li><a href="#research" class="block hover:text-blue-600">Projects</a></li>
+                <li><a href="#partners" class="block hover:text-blue-600">Collaborations</a></li>				
+				<li><a href="nlp_bridges.html" class="hover:text-blue-600">NLP Bridges</a></li>
+				<li><a href="jobs.html" class="hover:text-blue-600">Jobs</a></li>
                 <li><a href="#contact" class="block hover:text-blue-600">Contact</a></li>
             </ul>
         </div>
@@ -105,8 +112,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="relative hero bg-cover bg-center text-white pt-20"
-        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/nlp.jpg');">
-        <div class="container mx-auto px-6 flex flex-col items-center justify-center min-h-screen text-center">
+        style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./assets/bg1.jpeg');">
+<div class="container mx-auto px-6 flex flex-col items-center justify-center text-center" style="min-height: 70vh;">
             <h1 id="hero-h1" class="inline-block text-4xl md:text-6xl font-bold mb-8"></h1>
             <a href="#about"
                 class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded text-white font-medium shadow-lg transition duration-300">
@@ -156,8 +163,8 @@
                 </div>
                 <!-- Right: Images -->
                 <div class="md:w-1/3 mt-8 md:mt-0 grid grid-cols-1 gap-4">
-                    <img src="/assets/img/about-placeholder.jpg" alt="VinNLP Team" class="rounded-lg shadow-xl w-full">
-                    <img src="/assets/img/about-secondary.jpg" alt="Research Collaboration"
+                    <img src="/assets/bg1.jpeg" alt="VinNLP Team" class="rounded-lg shadow-xl w-full">
+                    <img src="/assets/bg2.jpg" alt="Research Collaboration"
                         class="rounded-lg shadow-xl w-full">
                 </div>
             </div>
@@ -167,7 +174,7 @@
     <!-- People Section -->
     <section id="people" class="py-12">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-8">Our Leadership</h2>
+            <h2 class="text-3xl font-bold text-center mb-8">VinNLP Leaders</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Dr. Mo El-Haj -->
                 <a href="profile.html?member=dr-mo-el-haj" class="block">
@@ -219,7 +226,7 @@
                         <h3 class="text-xl font-semibold">Dr. Le Duy Dung</h3>
                         <p class="text-gray-600">
                             Assistant Professor, Computer Science<br />
-                            <small>Program Director, Master of Product Management in AI</small>
+                            <small>Director of Data Science Program</small>
                         </p>
                         <p class="text-sm mt-2">
                             Research focus: Data science, AI applications, and data-driven NLP research.
@@ -229,7 +236,7 @@
             </div>
             <!-- PhD Students Section -->
             <div class="mt-12 text-center">
-                <h3 class="text-2xl font-semibold mb-4">PhD Students</h3>
+                <h3 class="text-2xl font-semibold mb-4">Researchers and PhD Students</h3>
                 <p class="mb-2">Our group supports PhD students working on NLP-related research.</p>
                 <p class="text-sm">
                     [Kieu Hai Dang] – Research focus: [Research Topic]<br>
@@ -237,9 +244,28 @@
                     [Ta Quang Hieu] – Research focus: [Research Topic]<br>
                     [Nguyen Tien Dong] – Research focus: [Research Topic]<br>
                 </p>
-                <p class="mt-2 text-blue-600 transition hover:underline cursor-pointer">
-                    Apply to join our research group
-                </p>
+				<a 
+			  href="https://cecs.vinuni.edu.vn/phd-in-computer-science/" 
+			  target="_blank" 
+			  class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+			>
+			  Apply to join our research group as a PhD student
+			</a>
+			<a 
+			  href="jobs.html" 
+			  target="_blank" 
+			  class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+			>
+			  Explore professional opportunities with our NLP team
+			</a>
+			<a 
+			  href="https://vinuni.edu.vn/jobs/" 
+			  target="_blank" 
+			  class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+			>
+			  Explore professional opportunities at VinUniversity
+			</a>
+
             </div>
         </div>
     </section>
@@ -280,16 +306,47 @@
             <div id="contentProjects" class="hidden mt-6">
                 <h3 class="text-2xl font-semibold mb-4">Ongoing Projects</h3>
                 <ul class="list-disc list-inside space-y-2 mb-6">
-                    <li>Project 1 Description.....</li>
-                    <li>Project 2 Description.....</li>
-                    <li>Project 3 Description.....</li>
+				    <li><strong>Projects by Dr Mo El-Haj</strong></li>
+                    <li>Welsh Language Model (a pilot)</li>
+					<li>DigiGrid for Welsh Language Resources</li>
+					<li>Using NLP to Monitor Water Pipes Burst</li>
+					<li>Catalyst Fund for Advancing Celtic NLP Research</li>
+					<li>FreeTxt: Supporting Bilingual Free-Text Survey and Questionnaire Data Analysis</li>
+					<li>Talent Track Application for NLP and Econometric Techniques</li>
+					<li>Canadian Annual Reports Extractor (CARE)</li>
+					<li>Using Word Embeddings to Create a Thesaurus of Contemporary Welsh</li>
+					<li>Welsh Summary Creator (WSC)</li>
+					<li>CLARA-Fin: Readability and Simplification in Financial Narrative</li>
+					<li>An Assessment of Corporate Disclosures from Accounting Standards</li>
+					<li>Arabic USAS Semantic Tagger (AraSAS)</li>
+					<li>FinT-esp: Financial Texts in Spanish</li>
+					
+					<li><strong>Projects by Prof. Wray Buntine</strong></li>
+					<li>Robust Vietnamese-English Clinical and Educational </li>
+					<li>Medical Translation</li>
+					<li>Towards Reliable Output Generation from LLMs</li>
+					<li>Verifiable Logical Reasoning with Language Models</li>
+					<li>Low-Resource Medical Named Entity Recognition</li>
+					<li>Improving Data Labelling Efficacy with Deep Neural 
+					<li>Network via Active Learning</li>
+					<li>Data-Driven Closed-Loop Medication Management</li>
+					<li>Deep Anomaly Detection on Graph-structured Data</li>
+					<li>Statistical Machine Learning Methods for Modelling</li>
+					<li>Imaging, and Monitoring the Brain</li>
+					
+					<li><strong>Projects by Dr Le Duy Dung</strong></li>
+					<li>Robust Vietnamese-English Clinical and Educational</li> 
+					<li>Medical Translation (PI: Prof. Wray Buntine)</li>
+					<li>Language Processing Adaptations for Multiple Recommendation Tasks (PI)</li>
+					<li>Multimodal Federated Learning for Multi-objectives Recommendation (PI)</li>
+					<li>SMART-CEM: Applying Artificial Intelligence (AI) and eye-tracking in designing and managing delightful customer experiences in the hospitality sector (Co-PI)</li>
                 </ul>
-                <h3 class="text-2xl font-semibold mb-4">Past Projects</h3>
+                 <!--  <h3 class="text-2xl font-semibold mb-4">Past Projects</h3>
                 <ul class="list-disc list-inside space-y-2">
                     <li>Project 1 Description.....</li>
                     <li>Project 2 Description.....</li>
                     <li>Project 3 Description.....</li>
-                </ul>
+                </ul> -->
             </div>
         </div>
     </section>
@@ -300,65 +357,148 @@
             <h2 class="text-3xl font-bold mb-8">Collaborations &amp; Partners</h2>
             <p class="mb-6">We work with academic, governmental, and industry partners worldwide.</p>
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
-                <div>
-                    <img src="./assets/vinai.png" alt="VinAI" class="mx-auto h-12" />
-                    <p class="text-sm mt-2">VinAI</p>
-                </div>
-                <div>
-                    <img src="./assets/Thiết kế chưa có tên.jpg" alt="Partner" class="mx-auto h-24" />
-                    <p class="text-sm mt-2">VinTelligence</p>
-                </div>
+<div>
+  <a href="https://vinai.io/" target="_blank" class="block text-center">
+    <img src="./assets/vinai.png" alt="VinAI" class="mx-auto h-12" />
+    <p class="text-sm mt-2">VinAI</p>
+  </a>
+</div>
+<div>
+  <a href="https://vinuni.edu.vn/club/vintelligence/" target="_blank" class="block text-center">
+    <img src="./assets/Thiết kế chưa có tên.jpg" alt="VinTelligence" class="mx-auto h-24" />
+    <p class="text-sm mt-2">VinTelligence</p>
+  </a>
+</div>
+<div>
+  <a href="https://ucrel.lancs.ac.uk/" target="_blank" class="block text-center">
+    <img src="./assets/ucrel.png" alt="UCREL" class="mx-auto h-12" />
+    <p class="text-sm mt-2">UCREL NLP Group</p>
+  </a>
+</div>
+<div>
+  <a href="https://lancaster.ac.uk" target="_blank" class="block text-center">
+    <img src="./assets/lancaster.png" alt="Lancaster University" class="mx-auto h-12" />
+    <p class="text-sm mt-2">Lancaster University, UK</p>
+  </a>
+</div>
+<div>
+  <a href="https://www.monash.edu/" target="_blank" class="block text-center">
+    <img src="./assets/monash.svg" alt="Monash University" class="mx-auto h-12" />
+    <p class="text-sm mt-2">Monash University</p>
+  </a>
+</div>
+<div>
+  <a href="https://www.cardiff.ac.uk/" target="_blank" class="block text-center">
+    <img src="./assets/cardiff.png" alt="Cardiff University" class="mx-auto h-12" />
+    <p class="text-sm mt-2">Cardiff University</p>
+  </a>
+</div>
+<div>
+  <a href="https://www.sdu.dk/" target="_blank" class="block text-center">
+    <img src="./assets/sdu.png" alt="University of Southern Denmark" class="mx-auto h-12" />
+    <p class="text-sm mt-2">University of Southern Denmark</p>
+  </a>
+</div>
+
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-12 bg-gray-100">
-        <div class="container mx-auto px-6 md:flex md:space-x-12">
-            <!-- Contact Info -->
-            <div class="md:w-1/2 mb-8 md:mb-0">
-                <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-                <p class="mb-2"><strong>Address:</strong> CECS, VinUniversity, Hanoi, Vietnam</p>
-                <p class="mb-2">
-                    <strong>Email:</strong>
-                    <a href="mailto:contact@vinuni.edu.vn"
-                        class="text-blue-600 hover:underline">contact@vinuni.edu.vn</a>
-                </p>
-                <p class="mb-6"><strong>Website:</strong> <a href="https://vinnlp.com"
-                        class="text-blue-600 hover:underline">vinnlp.com</a></p>
-                <div class="flex space-x-4">
-                    <a href="#" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="#" aria-label="Twitter" class="text-gray-500 hover:text-gray-700 text-2xl">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                </div>
-            </div>
+   <section id="contact" class="py-12 bg-gray-100">
+  <div class="container mx-auto px-6 md:flex md:space-x-12">
+    <!-- Contact Info -->
+    <div class="md:w-1/2 mb-8 md:mb-0">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="mb-2"><strong>Address:</strong> CECS, VinUniversity, Hanoi, Vietnam</p>
+      <p class="mb-2">
+        <strong>Email:</strong>
+        <a href="mailto:elhaj.m@vinuni.edu.vn" class="text-blue-600 hover:underline">elhaj.m@vinuni.edu.vn</a>
+      </p>
+      <p class="mb-6">
+        <strong>Website:</strong>
+        <a href="https://vinnlp.com" class="text-blue-600 hover:underline">vinnlp.com</a>
+      </p>
+<div class="flex space-x-4 mb-6">
+  <!-- LinkedIn -->
+  <a href="https://www.linkedin.com/company/vinnlp" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-gray-700 text-2xl">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 
+               0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.3c-.97 
+               0-1.75-.78-1.75-1.75s.78-1.75 
+               1.75-1.75 1.75.78 1.75 
+               1.75-.78 1.75-1.75 1.75zm13.5 
+               11.3h-3v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 
+               0-2.16 1.46-2.16 
+               2.96v5.7h-3v-10h2.89v1.37h.04c.4-.76 
+               1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 
+               4.59v5.6z"/>
+    </svg>
+  </a>
+
+  <!-- X (Twitter) -->
+  <a href="https://x.com/vinnlp" target="_blank" aria-label="X" class="text-gray-500 hover:text-gray-700 text-2xl">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+      <path d="M20.66 3H3.34C2.6 3 2 3.6 2 
+               4.34v15.32C2 20.4 2.6 21 3.34 
+               21h17.32c.74 0 1.34-.6 1.34-1.34V4.34C22 
+               3.6 21.4 3 20.66 3zM17.75 17h-2.2l-3.12-4.1-3.13 
+               4.1H7.1l4.2-5.49L7.5 7h2.2l2.84 
+               3.73L15.38 7h2.17l-4.1 5.32 4.3 
+               5.68z"/>
+    </svg>
+  </a>
+</div>
+
+      <div>
+        <a 
+          href="https://cecs.vinuni.edu.vn/phd-in-computer-science/" 
+          target="_blank" 
+          class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+        >
+          Apply for a PhD in Computer Science/NLP
+        </a>
+        <a 
+          href="https://vinuni.edu.vn/jobs/" 
+          target="_blank" 
+          class="block mt-2 text-blue-600 transition hover:underline cursor-pointer"
+        >
+          Work with us – Explore professional opportunities
+        </a>
+      </div>
+    </div>
             <!-- Contact Form -->
             <div class="md:w-1/2">
-                <form action="#" method="POST">
-                    <div class="mb-4">
-                        <input type="text" name="name" placeholder="Your Name"
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <input type="email" name="email" placeholder="Your Email"
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <textarea name="message" rows="4" placeholder="Your Message"
-                            class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            required></textarea>
-                    </div>
-                    <button type="submit"
-                        class="bg-blue-600 cursor-pointer text-white font-semibold px-6 py-3 rounded hover:bg-blue-700 transition duration-300">
-                        Send Message
-                    </button>
-                </form>
-            </div>
+    <form action="https://usebasin.com/f/24f2d90b8cdf" method="POST" accept-charset="UTF-8">
+        <!-- Name -->
+        <div class="mb-4">
+            <input type="text" name="name" placeholder="Your Name"
+                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+            <input type="email" name="email" placeholder="Your Email"
+                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required>
+        </div>
+
+        <!-- Message -->
+        <div class="mb-4">
+            <textarea name="message" rows="4" placeholder="Your Message"
+                class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                required></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit"
+            class="bg-blue-600 cursor-pointer text-white font-semibold px-6 py-3 rounded hover:bg-blue-700 transition duration-300">
+            Send Message
+        </button>
+    </form>
+</div>
+
         </div>
     </section>
 
@@ -371,7 +511,10 @@
                 <a href="#about" class="mr-4 hover:underline">About</a>
                 <a href="#people" class="mr-4 hover:underline">People</a>
                 <a href="#research" class="mr-4 hover:underline">Research</a>
-                <a href="#contact" class="hover:underline">Contact</a>
+				<a href="#research" class="mr-4 hover:underline">Projects</a>
+				<a href="jobs.html" class="mr-4 hover:underline">Jobs</a>
+				<a href="nlp_bridges.html" class="mr-4 hover:underline">NLP Bridges</a>
+                <a href="#contact" class="mr-4 hover:underline">Contact</a>
             </div>
             <!-- Social Icons -->
             <div class="mb-4 md:mb-0">
@@ -379,9 +522,8 @@
                 <a href="#" aria-label="Twitter" class="mr-3 hover:text-white"><i class="fab fa-twitter"></i></a>
             </div>
             <!-- Copyright -->
-            <div>
-                &copy; 2025 VinNLP. All rights reserved.
-            </div>
+      <div>&copy; 2025-2026 VinNLP. All rights reserved.</div>
+
         </div>
     </footer>
 
